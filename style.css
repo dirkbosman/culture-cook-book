@@ -1,0 +1,815 @@
+/* Global: Mobile & Desktop */
+
+:root {
+  --black: #000000;
+  --grey: #50514f;
+  --green: #70ffae;
+  --darkgreen: #3ebe76;
+  --yellow: #ffec5c;
+  --white: #fdfff7;
+  --middle-red: #d7907b;
+}
+
+html,
+body {
+  background-color: var(--white);
+}
+
+main {
+  margin-top: 140px;
+}
+
+main h1 {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+a,
+button {
+  font-family: 'Roboto', 'Open Sans', sans-serif;
+  font-weight: normal;
+  color: var(--grey);
+}
+
+p,
+span,
+li {
+  font-family: 'Roboto', 'Open Sans', sans-serif;
+  font-weight: normal;
+  color: var(--grey);
+}
+
+header {
+  background-color: var(--white);
+}
+
+/* * Banner image and Video for country and recipe pages */
+
+.banner video,
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.banner-text-content {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(0deg,
+      rgb(0, 0, 0) 25%,
+      rgba(255, 255, 255, 0) 100%);
+  width: 100%;
+  height: 400px;
+  text-align: center;
+}
+
+.banner-text-content>* {
+  margin: 0 auto 50px;
+  color: var(--white);
+  max-width: 1920px;
+}
+
+.banner-text-content h1 {
+  font-size: 75px;
+}
+
+.banner-text-content p {
+  width: 80%;
+}
+
+/* *Navigation styling */
+
+.outer-wrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: var(--white);
+  box-shadow: 0 -5px 15px -1px rgba(0, 0, 0, 0.2);
+}
+
+.nav-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-wrapper img {
+  width: 65px;
+  padding: 15px;
+}
+
+nav a {
+  color: inherit;
+}
+
+.desktop-nav {
+  display: none;
+}
+
+.mobile-nav {
+  height: 100vh;
+  background-color: var(--green);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-nav a {
+  font-size: 2rem;
+}
+
+.mobile-nav>a+a {
+  margin-top: 50px;
+}
+
+.hide {
+  display: none;
+}
+
+/* transform mobile burger to X */
+
+.transform .burger-line1 {
+  /* -webkit- adds safari support*/
+  -webkit-transform: rotate(-45deg) translate(-5px, 5px);
+  transform: rotate(-45deg) translate(-4px, 5px);
+}
+
+.transform .burger-line2 {
+  opacity: 0;
+}
+
+.transform .burger-line3 {
+  /* -webkit- adds safari support*/
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.burger {
+  width: 25px;
+  height: auto;
+  padding: 10px 25px 0;
+}
+
+.burger-line1,
+.burger-line2,
+.burger-line3 {
+  width: 100%;
+  height: 2px;
+  margin: 6px 0;
+  background-color: black;
+  transition: 0.5s;
+}
+
+.introduction,
+.countries-section,
+.recipes-section {
+  padding: 0 50px;
+}
+
+.recipes-section {
+  margin-top: 75px;
+}
+
+.recipes h1 {
+  margin-bottom: -50px;
+}
+
+.recipes {
+  margin-top: -100px;
+}
+
+.introduction {
+  text-align: center;
+  color: white;
+}
+
+.intro img {
+  width: 35%;
+  max-width: 150px;
+  object-fit: contain;
+}
+
+/* *Country cards */
+
+.countries-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countries {
+  margin-top: 75px;
+}
+
+.countries-section.country-link {
+  width: auto;
+}
+
+.country-card {
+  position: relative;
+
+  width: 100%;
+  max-width: 400px;
+  height: 200px;
+  border-radius: 5px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  margin: 15px 0;
+}
+
+.card-overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.country-card .card-overlay h2 {
+  color: var(--white);
+  z-index: 10;
+}
+
+.country-card.colombia {
+  background: url('assets/colombia.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.country-card.south-africa {
+  background: url('assets/south-africa.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.country-card.britain {
+  background: url('assets/british.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.country-card.italy {
+  background: url('assets/italy.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.country-card.germany {
+  background: url('assets/germany.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* *recipe card */
+
+.recipes-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#vegetarian,
+#vegan,
+#meat {
+  max-width: 400px;
+  width: 100%;
+}
+
+.recipe-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  margin: 15px 0;
+}
+
+.recipe-card .card-overlay {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.recipe-card .card-overlay h2 {
+  z-index: 10;
+}
+
+.recipe-card.recipe1 {
+  background: url('assets/dish.jpg') no-repeat;
+  background-size: cover;
+}
+
+.recipe-card.recipe-veg1 {
+  background: url('assets/veg1.jpg') no-repeat;
+  background-size: cover;
+}
+
+.recipe-card.recipe-veg2 {
+  background: url('assets/veg2.jpg') no-repeat;
+  background-size: cover;
+}
+
+.recipe-card.recipe-veg3 {
+  background: url('assets/veg3.jpg') no-repeat;
+  background-size: cover;
+}
+
+.recipe-card.recipe-vegan1 {
+  background: url('assets/vegan1.jpg') no-repeat;
+  background-size: cover;
+}
+
+.recipe-card.recipe-vegan2 {
+  background: url('assets/vegan2.jpg') no-repeat;
+  background-size: cover;
+}
+
+.recipe-card.recipe-vegan3 {
+  background: url('assets/vegan3.jpg') no-repeat;
+  background-size: cover;
+}
+
+.recipe-card.recipe-meat1 {
+  background: url('assets/meat1.jpg') no-repeat;
+  background-size: cover;
+}
+
+.recipe-card.recipe-meat2 {
+  background: url('assets/meat2.jpg') no-repeat;
+  background-size: cover;
+}
+
+.recipe-card.recipe-meat3 {
+  background: url('assets/meat3.jpg') no-repeat;
+  background-size: cover;
+}
+
+.card-label {
+  position: absolute;
+  padding: 5px 10px;
+  bottom: 5px;
+  right: 15px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  z-index: 99;
+}
+
+#meat .recipe-card .card-label {
+  background-color: var(--middle-red);
+  color: var(--white);
+}
+
+#vegetarian .recipe-card .card-label {
+  background-color: var(--yellow);
+  color: var(--grey);
+}
+
+#vegan .recipe-card .card-label {
+  background-color: var(--green);
+  color: var(--grey);
+}
+
+/* *Recipe Detail Page Styling */
+
+.recipe-detail-section {
+  padding: 0 50px;
+  margin-top: -100px;
+}
+
+.recipe-detail-section>div+div {
+  margin-top: 50px;
+}
+
+.recipe-ingredients {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-ingredients img {
+  width: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+.recipe-ingredients ul {
+  list-style: none;
+  padding: 0;
+}
+
+.recipe-ingredients ul li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe-ingredients>.ingredient-item+.ingredient-item {
+  border-top: 1px solid var(--grey);
+}
+
+.ingredient-item ul li {
+  font-size: 0.85rem;
+}
+
+.ingredient-item span {
+  padding: 0 5px 0 0;
+  font-weight: bold;
+  font-style: italic;
+  border-radius: 5px;
+  padding: 2px 4px;
+}
+
+.recipe-steps {
+  position: relative;
+}
+
+.recipe-steps ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.recipe-steps ol>li+li {
+  margin-top: 15px;
+}
+
+.recipe-steps ol li::before {
+  content: "+";
+  display: block;
+}
+
+.recipe-steps img {
+  width: 113px;
+  display: block;
+  margin: 0 auto;
+}
+
+.recipe-share {
+  border-top: 1px solid var(--grey);
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+#share-button {
+  padding: 10px 50px;
+}
+
+#share-button:hover {
+  cursor: pointer;
+  background-color: var(--darkgreen);
+  color: var(--white);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 8888;
+}
+
+.share-modal {
+  position: fixed;
+  top: 50%;
+  bottom: 50%;
+  right: 50%;
+  left: 50%;
+  background-color: var(--green);
+  width: 70%;
+  height: 30%;
+  max-height: 200px;
+  max-width: 500px;
+  border-radius: 5px;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.inner-share-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0 0 0;
+}
+
+#close-share {
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding: 15px;
+  box-shadow: none;
+}
+
+.share-modal img {
+  height: 30px;
+  width: auto;
+  padding: 5px;
+}
+
+.close-share-line1,
+.close-share-line2 {
+  width: 30px;
+  height: 5px;
+  background-color: var(--grey);
+  border-radius: 5px;
+}
+
+.close-share-line1 {
+  transform: rotate(45deg) translate(4px, 2px);
+}
+
+.close-share-line2 {
+  transform: rotate(-45deg) translateX(1px);
+}
+
+#close-share:active .close-share-line1,
+#close-share:active .close-share-line2 {
+  background-color: var(--middle-red);
+}
+
+.filter-buttons-container {
+  border-bottom: 1px solid var(--grey);
+  padding-bottom: 30px;
+}
+
+.filter-buttons-container>button+button {
+  margin-top: 25px;
+}
+
+button {
+  background-color: var(--green);
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: none;
+  outline-style: none;
+}
+
+#vegetarian-button,
+#vegan-button,
+#meat-button {
+  width: 100%;
+  padding: 25px 10px;
+
+}
+
+#vegetarian-button {
+  background-color: var(--yellow);
+}
+
+#vegan-button {
+  background-color: var(--green);
+}
+
+#meat-button {
+  background-color: var(--middle-red);
+}
+
+button:active {
+  background-color: var(--green);
+  opacity: 0.9;
+}
+
+.footer {
+  background-color: var(--white);
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  box-shadow: 0 -1px 30px -15px rgba(0, 0, 0, 0.2);
+}
+
+.footer.fourofour {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.footer a {
+  padding: 0px 20px;
+}
+
+/* *Desktop View */
+
+@media only screen and (min-width: 830px) {
+  .burger {
+    display: none;
+  }
+
+  .outer-wrapper {
+    position: relative;
+  }
+
+  .nav-wrapper {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin: 0 auto;
+    width: initial;
+    max-width: 1500px;
+    align-items: center;
+  }
+
+  .nav-wrapper nav a {
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .nav-wrapper nav a:hover {
+    border-top: 5px solid var(--yellow);
+  }
+
+  .nav-wrapper nav a.active {
+    border-top: 5px solid var(--yellow);
+  }
+
+  .desktop-nav {
+    display: initial;
+  }
+
+  .desktop-nav>a+a {
+    margin-left: 15px;
+  }
+
+  main {
+    margin: 50px auto;
+    max-width: 1920px;
+  }
+
+  .introduction,
+  .countries-section,
+  .recipes-section {
+    padding: 0 50px;
+  }
+
+  .recipes {
+    margin-top: initial;
+  }
+
+  .banner {
+    height: 600px;
+  }
+
+  .banner-text-content p {
+    max-width: 900px;
+  }
+
+  .underline-404 {
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  .home-url-404 {
+    padding: 5px;
+    background-color: var(--yellow);
+    border-radius: 5px;
+  }
+
+  .countries-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .countries-section>*+* {
+    margin-left: 25px;
+  }
+
+  .home .country-card {
+    width: 300px;
+  }
+
+  .country-card {
+    width: 220px;
+    transition: transform 0.3s;
+  }
+
+  .country-card:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+  }
+
+  .country-card:hover .card-overlay {
+    opacity: 1;
+  }
+
+  .filter-buttons-container {
+    display: none;
+  }
+
+  #vegetarian,
+  #vegan,
+  #meat {
+    max-width: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  #vegetarian>*+*,
+  #vegan>*+*,
+  #meat>*+* {
+    margin-left: 25px;
+  }
+
+  .recipe-card {
+    width: 300px;
+    transition: transform 0.3s;
+  }
+
+  .recipe-card:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+  }
+
+  .card-overlay {
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  .recipe-card:hover .card-overlay {
+    opacity: 1;
+    transition: 0.3s;
+  }
+
+  .recipe-detail-section {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 45px;
+    padding-bottom: 80px;
+    margin-top: initial;
+  }
+
+  .recipe-detail-section>div+div {
+    margin-top: initial;
+  }
+
+  .recipe-ingredients {
+    width: 250px;
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .recipe-ingredients img {
+    width: 100px;
+    display: initial;
+    margin: initial;
+  }
+
+  .recipe-steps {
+    grid-area: 1 / 2 / 2/ 3;
+    padding-bottom: 100px;
+  }
+
+  .recipe-steps img {
+    display: initial;
+    margin: 0;
+  }
+
+  .recipe-steps ol {
+    list-style: numbered;
+  }
+
+  .recipe-steps ol li::before {
+    content: none;
+  }
+
+  #close-share:hover {
+    cursor: pointer;
+  }
+
+  #close-share:hover .close-share-line1,
+  #close-share:hover .close-share-line2 {
+    background-color: var(--middle-red);
+  }
+}
